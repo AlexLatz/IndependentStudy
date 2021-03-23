@@ -32,3 +32,16 @@
     - https://github.com/MaskRay/ccls - c++ language server
     - https://github.com/neoclide/coc.nvim - vim lsp autocompletion plugin
 	- need these two for setting up vim c++ dev
+
+## Monday, March 22
+
+- Mostly finished with vim config, started chapter 5 exercises
+    - Went with coc.nvim and clangd for c++ lsp
+    - Had to switch to neovim to fix weird autocomplete menu refresh issues
+    - vim is so nice - plus more functional docs than on mac vscode
+- Permutation index exercise
+    - Decided to take my own approach, but may revert to book algorithm if mine doesn't work out
+    - Had to look up what this was because the exercise seemed really boring at first
+
+- Links
+    - https://github.com/jackguo380/vim-lsp-cxx-highlight - semantic highlighting for c++ in vim
