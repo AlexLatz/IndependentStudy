@@ -45,3 +45,17 @@
 
 - Links
     - https://github.com/jackguo380/vim-lsp-cxx-highlight - semantic highlighting for c++ in vim
+
+## Tuesday, March 23
+
+- Configured mac vim, finished exercise 5-1
+    - This exercise was a little complicated 
+        - had to create my own algorithm because the textbook's didn't make sense
+    - I'll probably skip some of the exercises in this unit - they're busy work
+    - Just want to make sure I'm confident with C++ collections and iterators
+- Mac terminal customization is so cool
+    - Still need to switch to neovim on mac, but waiting for my llvm 11 update first
+    - also need to setup some sort of compiler/multiplexer for running code
+
+- Links 
+    - https://github.com/sonph/onehalf - the greatest color scheme of all time
