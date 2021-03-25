@@ -59,3 +59,12 @@
 
 - Links 
     - https://github.com/sonph/onehalf - the greatest color scheme of all time
+
+## Thursday, March 25
+
+- Switched to neovim on mac, set up a compiler zsh alias
+    - Finally pretty happy with my mac c++ workflow
+- Finished enough chapter 5 exercises to feel confident, moving on to chapter 6
+
+- Links
+    - https://blog.lftechnology.com/command-line-productivity-with-zsh-aliases-28b7cebfdff9 - how to do zsh aliases
