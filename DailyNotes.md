@@ -75,3 +75,24 @@
 - Began chapter 6 notes, continued to tweak vim
   - Very close to switching to it full-time
 - Also have been considering SFML over SDL because it's more barebones than I thought
+
+## Tuesday, March 30 - Wednesday, March 31
+
+- Paused work on Accelerated CPP because of an interesting APCS-A project
+  - Decided to implement an AI in the Connect 4 project
+  - Lots of quarantine free time so it should be good
+- Fully finished the base game for Connect 4 so I can scrap the AI if I run out of time
+  - Missing a heuristic for alpha-beta pruning minimax search, trying to implement it
+  - Some sort of threat-based heuristic seems promising
+- Also could do MCTS just because the heuristic is painful to make
+  - May consider this if I find some better pseudocode or example
+
+- Links
+  - <https://asingleneuron.wordpress.com/2012/08/04/connect-four/>
+    - one person's approach to alpha-beta pruning for connect four
+    - Good idea for the heuristic, might try a variation of this
+  - <https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning>
+    - Good pseudocode and explanation for the algorithm
+  - <https://web.archive.org/web/20180629163426/http://mcts.ai/>
+    - archived version of old site that detailed MCTS stuff
+    - very good resource, part of a Essex/Bradford project that ended in 2013
