@@ -26,3 +26,12 @@
   - Turns out invalid input with nextInt leaves it in stdin
   - You have to call scanner.nextLine() or close the scanner to refresh
 - Also added a re-evaluation function that prevents last-minute blunders
+
+## Wednesday, April 7
+
+- Finished chapter 6 and started chapter 7 notes
+  - Skipped chapter 6 exercises because I really don't need more c++ library practice
+  - Found an interesting exercise in chapter 7 so doing that
+- Grammar parsing system - recursive calls into a map so it should be good
+- The connect 4 AI was good practice - definitely should use MCTS next time
+  - Or maybe refine the heuristic because mine was kinda weak
