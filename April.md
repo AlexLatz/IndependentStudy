@@ -35,3 +35,15 @@
 - Grammar parsing system - recursive calls into a map so it should be good
 - The connect 4 AI was good practice - definitely should use MCTS next time
   - Or maybe refine the heuristic because mine was kinda weak
+
+## Thursday, April 8 - Friday, April 9
+
+- Finished the grammar parsing exercise - coincidentally good recursion practice
+  - Also ran into some random number stuff in C++, seems kinda controversial
+  - either C rand() or C++17 uniform distributions
+- But overall very happy with my C++ knowledge
+  - Gonna move onto SFML development soon
+
+- Links
+  - <https://stackoverflow.com/questions/6942273/how-to-get-a-random-element-from-a-c-container>
+    - People arguing about the best approach to generate an int in range
