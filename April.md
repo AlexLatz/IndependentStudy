@@ -47,3 +47,11 @@
 - Links
   - <https://stackoverflow.com/questions/6942273/how-to-get-a-random-element-from-a-c-container>
     - People arguing about the best approach to generate an int in range
+
+## Sunday, April 10
+
+- Finished up chapter 7 and started chapter 8 notes
+  - The book is starting to get a little dated (made in 1998)
+  - Iterators are nowhere near as important imo
+- Hopefully it gets a little more into the object-oriented differences
+  - Then I'll be ready to start work in SFML
