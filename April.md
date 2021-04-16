@@ -62,3 +62,11 @@
   - Chapter 8 was all about generics and iterators - not super relevant
 - Also fixed my documentation issues by connecting to a Github Codespace
   - This might be super useful for SFML dev because the documentation is important
+
+## Wednesday, April 14 - Friday, April 16
+
+- Finished chapter 9 notes - getting comfortable with C++ OOP syntax
+  - None of the exercises were any good so I just created some points and a rect
+- Also messed around with VSCode setup for SFML/C++ and keep running into weird issues
+  - The lack of docs on only mac is really strange
+  - It goes away when I use a codespace but those don't support SFML
