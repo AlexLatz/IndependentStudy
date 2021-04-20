@@ -70,3 +70,9 @@
 - Also messed around with VSCode setup for SFML/C++ and keep running into weird issues
   - The lack of docs on only mac is really strange
   - It goes away when I use a codespace but those don't support SFML
+
+## Tuesday, April 20
+
+- Fixed SFML for VSCode on mac, need to find tutorials for it next
+  - Got the documentation working which is good
+- Started chapter 10 notes
