@@ -76,3 +76,10 @@
 - Fixed SFML for VSCode on mac, need to find tutorials for it next
   - Got the documentation working which is good
 - Started chapter 10 notes
+
+## Thursday, April 29
+
+- Been super busy with finishing robotics code and AP exams starting
+  - Finally finished chapter 10 notes and began the exercises
+- This chapter was actually super helpful - arrays and pointers make a lot of sense
+
