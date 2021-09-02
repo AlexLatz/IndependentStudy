@@ -16,3 +16,19 @@
 
 - Met with Mr. Griest, considered expanding the project into the study
   - May increase the board size and test building out more complex AIs
+
+## Monday, August 30
+
+- Fixed disjoint set creation - reversed the sorting operator and equality operators
+  - Also did some optimizations - no longer checking the set on each coordinate
+  - This saves roughly 2 seconds per board - so it makes the AI like 2 million times faster
+
+## Tuesday, August 31
+
+- Added removing set of blocks and sliding functionality - works well together
+  - Excited about making the AI for this - it's an interesting game
+
+## Wednesday, September 1
+
+- Decided on a heuristic - number of blocks left on screen + number of moves from root node
+- Began work on the AI wrapper class
