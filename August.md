@@ -32,3 +32,13 @@
 
 - Decided on a heuristic - number of blocks left on screen + number of moves from root node
 - Began work on the AI wrapper class
+
+## Friday, September 3
+
+- Messed around with object-oriented file structure, separated everything out
+- Fixed issues with the copy constructors
+
+## Tuesday, September 7
+
+- Did some pointer work, think I got everything passing through correctly
+- Dealing with the C++ priority queue adapter - it has a weird read-only pop/top structure
