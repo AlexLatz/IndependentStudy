@@ -42,3 +42,25 @@
 
 - Did some pointer work, think I got everything passing through correctly
 - Dealing with the C++ priority queue adapter - it has a weird read-only pop/top structure
+
+## Thursday, September 9
+
+- Met with Mr. Griest
+  - Realized that I could make the grids const while talking with him
+- More restructuring, header define guards
+
+## Friday, September 10
+
+- Lots of compiler work - managed to get it building and running
+  - The program crashes - out of memory error so it's time to debug
+- VSCode debugger problems
+
+## Saturday, September 11
+
+- Switched to CMake to make the building process easier - now the debug menu kinda works
+- Had to compile in x86_64 because VSCode isn't fully working natively on M1 Macs yet
+
+## Monday, September 13
+
+- More CMake problems - debugger won't show local variables, crashes often
+- Changing IDEs to CLion to hopefully get more help with building and debugging
