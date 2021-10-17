@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/alexlatz/Documents/HackerRank/src/Clickomania/Grid.cpp
+Grid.h
+/Users/alexlatz/Documents/HackerRank/src/Clickomania/Grid.h
+iostream
+-
+
+/Users/alexlatz/Documents/HackerRank/src/Clickomania/Grid.h
+vector
+-
+string
+-
+set
+-
+

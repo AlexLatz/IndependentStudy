@@ -1,0 +1,4 @@
+/Users/alexlatz/Documents/HackerRank/src/Clickomania/build/CMakeFiles/rebuild_cache.dir
+/Users/alexlatz/Documents/HackerRank/src/Clickomania/build/CMakeFiles/edit_cache.dir
+/Users/alexlatz/Documents/HackerRank/src/Clickomania/build/CMakeFiles/Clickomania_singlefile.dir
+/Users/alexlatz/Documents/HackerRank/src/Clickomania/build/CMakeFiles/Clickomania.dir

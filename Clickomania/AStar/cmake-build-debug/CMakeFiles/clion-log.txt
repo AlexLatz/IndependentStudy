@@ -1,0 +1,4 @@
+/Users/alexlatz/.brew/Cellar/cmake/3.21.2/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /Users/alexlatz/Documents/HackerRank/src/Clickomania
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/alexlatz/Documents/HackerRank/src/Clickomania/cmake-build-debug
