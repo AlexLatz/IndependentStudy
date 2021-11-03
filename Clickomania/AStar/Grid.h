@@ -32,6 +32,7 @@ class Grid {
         void printBoard();
         void printParents();
         void createDisjoint();
+        Pair getAbsParent(int i, int j);
         Grid removeSet(Pair p);
         int getNumBlocks() const {return this->numBlocks;}
         const int getNumUniqueBlocks() const {return this->uniqueBlocks.size();}

@@ -1,4 +1,4 @@
-/Users/alexlatz/Documents/HackerRank/src/Clickomania/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/alexlatz/Documents/HackerRank/src/Clickomania/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/alexlatz/Documents/HackerRank/src/Clickomania/cmake-build-debug/CMakeFiles/Clickomania_singlefile.dir
-/Users/alexlatz/Documents/HackerRank/src/Clickomania/cmake-build-debug/CMakeFiles/Clickomania.dir
+/Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/cmake-build-debug/CMakeFiles/Clickomania_singlefile.dir
+/Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/cmake-build-debug/CMakeFiles/Clickomania.dir

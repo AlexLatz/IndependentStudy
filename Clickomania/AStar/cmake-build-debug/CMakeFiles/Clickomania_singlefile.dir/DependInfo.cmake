@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/alexlatz/Documents/HackerRank/src/Clickomania/singlefile.cpp" "/Users/alexlatz/Documents/HackerRank/src/Clickomania/cmake-build-debug/CMakeFiles/Clickomania_singlefile.dir/singlefile.cpp.o"
+  "/Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/singlefile.cpp" "/Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/cmake-build-debug/CMakeFiles/Clickomania_singlefile.dir/singlefile.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

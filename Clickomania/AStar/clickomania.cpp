@@ -98,10 +98,7 @@ int main(int argc, char const *argv[])
         board.push_back(s);
     }
     Grid grid(board);
-    grid.createDisjoint();
-    grid.printBoard();
-    grid.printParents();
-    //nextMove(x, y, k, board);
+    nextMove(x, y, k, board);
     infile.close();
     return 0;
 }

@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/Users/alexlatz/Documents/HackerRank/src/Clickomania/Grid.cpp
+/Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/Grid.cpp
 Grid.h
-/Users/alexlatz/Documents/HackerRank/src/Clickomania/Grid.h
+/Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/Grid.h
 iostream
 -
 
-/Users/alexlatz/Documents/HackerRank/src/Clickomania/Grid.h
+/Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/Grid.h
 vector
 -
 string

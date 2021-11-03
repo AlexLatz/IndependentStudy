@@ -53,10 +53,10 @@ RM = /Users/alexlatz/.brew/Cellar/cmake/3.21.2/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/alexlatz/Documents/HackerRank/src/Clickomania
+CMAKE_SOURCE_DIR = /Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/alexlatz/Documents/HackerRank/src/Clickomania/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Clickomania.dir/depend.make
@@ -68,42 +68,42 @@ include CMakeFiles/Clickomania.dir/flags.make
 
 CMakeFiles/Clickomania.dir/clickomania.cpp.o: CMakeFiles/Clickomania.dir/flags.make
 CMakeFiles/Clickomania.dir/clickomania.cpp.o: ../clickomania.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alexlatz/Documents/HackerRank/src/Clickomania/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Clickomania.dir/clickomania.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Clickomania.dir/clickomania.cpp.o -c /Users/alexlatz/Documents/HackerRank/src/Clickomania/clickomania.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Clickomania.dir/clickomania.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Clickomania.dir/clickomania.cpp.o -c /Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/clickomania.cpp
 
 CMakeFiles/Clickomania.dir/clickomania.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Clickomania.dir/clickomania.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alexlatz/Documents/HackerRank/src/Clickomania/clickomania.cpp > CMakeFiles/Clickomania.dir/clickomania.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/clickomania.cpp > CMakeFiles/Clickomania.dir/clickomania.cpp.i
 
 CMakeFiles/Clickomania.dir/clickomania.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Clickomania.dir/clickomania.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alexlatz/Documents/HackerRank/src/Clickomania/clickomania.cpp -o CMakeFiles/Clickomania.dir/clickomania.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/clickomania.cpp -o CMakeFiles/Clickomania.dir/clickomania.cpp.s
 
 CMakeFiles/Clickomania.dir/Grid.cpp.o: CMakeFiles/Clickomania.dir/flags.make
 CMakeFiles/Clickomania.dir/Grid.cpp.o: ../Grid.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alexlatz/Documents/HackerRank/src/Clickomania/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Clickomania.dir/Grid.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Clickomania.dir/Grid.cpp.o -c /Users/alexlatz/Documents/HackerRank/src/Clickomania/Grid.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Clickomania.dir/Grid.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Clickomania.dir/Grid.cpp.o -c /Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/Grid.cpp
 
 CMakeFiles/Clickomania.dir/Grid.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Clickomania.dir/Grid.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alexlatz/Documents/HackerRank/src/Clickomania/Grid.cpp > CMakeFiles/Clickomania.dir/Grid.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/Grid.cpp > CMakeFiles/Clickomania.dir/Grid.cpp.i
 
 CMakeFiles/Clickomania.dir/Grid.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Clickomania.dir/Grid.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alexlatz/Documents/HackerRank/src/Clickomania/Grid.cpp -o CMakeFiles/Clickomania.dir/Grid.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/Grid.cpp -o CMakeFiles/Clickomania.dir/Grid.cpp.s
 
 CMakeFiles/Clickomania.dir/GameState.cpp.o: CMakeFiles/Clickomania.dir/flags.make
 CMakeFiles/Clickomania.dir/GameState.cpp.o: ../GameState.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alexlatz/Documents/HackerRank/src/Clickomania/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Clickomania.dir/GameState.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Clickomania.dir/GameState.cpp.o -c /Users/alexlatz/Documents/HackerRank/src/Clickomania/GameState.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Clickomania.dir/GameState.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Clickomania.dir/GameState.cpp.o -c /Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/GameState.cpp
 
 CMakeFiles/Clickomania.dir/GameState.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Clickomania.dir/GameState.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alexlatz/Documents/HackerRank/src/Clickomania/GameState.cpp > CMakeFiles/Clickomania.dir/GameState.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/GameState.cpp > CMakeFiles/Clickomania.dir/GameState.cpp.i
 
 CMakeFiles/Clickomania.dir/GameState.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Clickomania.dir/GameState.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alexlatz/Documents/HackerRank/src/Clickomania/GameState.cpp -o CMakeFiles/Clickomania.dir/GameState.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/GameState.cpp -o CMakeFiles/Clickomania.dir/GameState.cpp.s
 
 # Object files for target Clickomania
 Clickomania_OBJECTS = \
@@ -119,7 +119,7 @@ Clickomania: CMakeFiles/Clickomania.dir/Grid.cpp.o
 Clickomania: CMakeFiles/Clickomania.dir/GameState.cpp.o
 Clickomania: CMakeFiles/Clickomania.dir/build.make
 Clickomania: CMakeFiles/Clickomania.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/alexlatz/Documents/HackerRank/src/Clickomania/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Clickomania"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Clickomania"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Clickomania.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -131,6 +131,6 @@ CMakeFiles/Clickomania.dir/clean:
 .PHONY : CMakeFiles/Clickomania.dir/clean
 
 CMakeFiles/Clickomania.dir/depend:
-	cd /Users/alexlatz/Documents/HackerRank/src/Clickomania/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/alexlatz/Documents/HackerRank/src/Clickomania /Users/alexlatz/Documents/HackerRank/src/Clickomania /Users/alexlatz/Documents/HackerRank/src/Clickomania/cmake-build-debug /Users/alexlatz/Documents/HackerRank/src/Clickomania/cmake-build-debug /Users/alexlatz/Documents/HackerRank/src/Clickomania/cmake-build-debug/CMakeFiles/Clickomania.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar /Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar /Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/cmake-build-debug /Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/cmake-build-debug /Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/cmake-build-debug/CMakeFiles/Clickomania.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Clickomania.dir/depend
 

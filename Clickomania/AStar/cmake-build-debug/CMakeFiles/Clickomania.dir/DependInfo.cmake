@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/alexlatz/Documents/HackerRank/src/Clickomania/GameState.cpp" "/Users/alexlatz/Documents/HackerRank/src/Clickomania/cmake-build-debug/CMakeFiles/Clickomania.dir/GameState.cpp.o"
-  "/Users/alexlatz/Documents/HackerRank/src/Clickomania/Grid.cpp" "/Users/alexlatz/Documents/HackerRank/src/Clickomania/cmake-build-debug/CMakeFiles/Clickomania.dir/Grid.cpp.o"
-  "/Users/alexlatz/Documents/HackerRank/src/Clickomania/clickomania.cpp" "/Users/alexlatz/Documents/HackerRank/src/Clickomania/cmake-build-debug/CMakeFiles/Clickomania.dir/clickomania.cpp.o"
+  "/Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/GameState.cpp" "/Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/cmake-build-debug/CMakeFiles/Clickomania.dir/GameState.cpp.o"
+  "/Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/Grid.cpp" "/Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/cmake-build-debug/CMakeFiles/Clickomania.dir/Grid.cpp.o"
+  "/Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/clickomania.cpp" "/Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/cmake-build-debug/CMakeFiles/Clickomania.dir/clickomania.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

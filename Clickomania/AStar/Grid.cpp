@@ -77,26 +77,34 @@ void Grid::createDisjoint() {
     for (int i = 0; i < board.size(); i++) {
         for (int j = 0; j < board[i].size(); j++) {
             if (board[i][j] != '-') {
-                if (j < board[i].size()-1 && board[i][j] == board[i][j+1] && !(parent[i][j] == parent[i][j+1])) {
-                    if (parent[i][j+1].row != i || parent[i][j+1].col != j+1) {
-                        blocks.erase(parent[i][j]);
-                        parent[i][j] = parent[i][j+1];
-                        uniqueBlocks.insert(parent[i][j]);
+                if (j < board[i].size()-1 && board[i][j] == board[i][j+1] && !(getAbsParent(i, j) == getAbsParent(i, j+1))) {
+                    Grid::Pair ap = getAbsParent(i, j);
+                    Grid::Pair apR = getAbsParent(i, j+1);
+                    if (uniqueBlocks.count(apR) > 0) {
+                        blocks.erase(ap);
+                        uniqueBlocks.erase(ap);
+                        parent[ap.row][ap.col] = apR;
+                        uniqueBlocks.insert(apR);
                     } else {
-                        blocks.erase(parent[i][j+1]);
-                        parent[i][j+1] = parent[i][j];
-                        uniqueBlocks.insert(parent[i][j+1]);
+                        blocks.erase(apR);
+                        uniqueBlocks.erase(apR);
+                        parent[apR.row][apR.col] = ap;
+                        uniqueBlocks.insert(ap);
                     }
                 }
-                if (i < board.size()-1 && board[i][j] == board[i+1][j] && !(parent[i][j] == parent[i+1][j])) {
-                    if (parent[i+1][j].row != i+1 || parent[i+1][j].col != j) {
-                        blocks.erase(parent[i][j]);
-                        parent[i][j] = parent[i+1][j];
-                        uniqueBlocks.insert(parent[i][j]);
+                if (i < board.size()-1 && board[i][j] == board[i+1][j] && !(getAbsParent(i, j) == getAbsParent(i+1, j))) {
+                    Grid::Pair ap = getAbsParent(i, j);
+                    Grid::Pair apD = getAbsParent(i+1, j);
+                    if (uniqueBlocks.count(apD) > 0) {
+                        blocks.erase(ap);
+                        uniqueBlocks.erase(ap);
+                        parent[ap.row][ap.col] = apD;
+                        uniqueBlocks.insert(apD);
                     } else {
-                        blocks.erase(parent[i+1][j]);
-                        parent[i+1][j] = parent[i][j];
-                        uniqueBlocks.insert(parent[i+1][j]);
+                        blocks.erase(apD);
+                        uniqueBlocks.erase(apD);
+                        parent[apD.row][apD.col] = ap;
+                        uniqueBlocks.insert(ap);
                     }
                 }
             }
@@ -109,11 +117,21 @@ Grid Grid::removeSet(Grid::Pair p) {
     vector<string> newBoard(board);
     for (int i = 0; i < newBoard.size(); i++) {
         for (int j = 0; j < newBoard[i].size(); j++) {
-            if (parent[i][j] == p) newBoard[i][j] = '-';
+            if (getAbsParent(i, j) == p) newBoard[i][j] = '-';
         }
     }
     Grid newGrid(newBoard);
     return newGrid;
+}
+
+Grid::Pair Grid::getAbsParent(int i, int j) {
+    Grid::Pair p = {i, j};
+    Grid::Pair current = parent[i][j];
+    while (!(p == current)) {
+        p = current;
+        current = parent[current.row][current.col];
+    }
+    return current;
 }
 
 set<Grid::Pair>& Grid::getBlocks() {
@@ -133,7 +151,8 @@ void Grid::printBoard() {
 void Grid::printParents() {
     for (int i = 0; i < parent.size(); i++) {
         for (int j = 0; j < parent[i].size(); j++) {
-            cout << parent[i][j].row << parent[i][j].col << " ";
+            Grid::Pair absParent = getAbsParent(i, j);
+            cout << absParent.row << absParent.col << " ";
         }
         cout << "\n";
     }

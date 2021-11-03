@@ -54,10 +54,10 @@ RM = /Users/alexlatz/.brew/Cellar/cmake/3.21.2/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/alexlatz/Documents/HackerRank/src/Clickomania
+CMAKE_SOURCE_DIR = /Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/alexlatz/Documents/HackerRank/src/Clickomania/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -83,14 +83,14 @@ clean: CMakeFiles/Clickomania.dir/clean
 CMakeFiles/Clickomania_singlefile.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Clickomania_singlefile.dir/build.make CMakeFiles/Clickomania_singlefile.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Clickomania_singlefile.dir/build.make CMakeFiles/Clickomania_singlefile.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/alexlatz/Documents/HackerRank/src/Clickomania/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target Clickomania_singlefile"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target Clickomania_singlefile"
 .PHONY : CMakeFiles/Clickomania_singlefile.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Clickomania_singlefile.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alexlatz/Documents/HackerRank/src/Clickomania/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/cmake-build-debug/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Clickomania_singlefile.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alexlatz/Documents/HackerRank/src/Clickomania/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/Clickomania_singlefile.dir/rule
 
 # Convenience name for target.
@@ -109,14 +109,14 @@ CMakeFiles/Clickomania_singlefile.dir/clean:
 CMakeFiles/Clickomania.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Clickomania.dir/build.make CMakeFiles/Clickomania.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Clickomania.dir/build.make CMakeFiles/Clickomania.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/alexlatz/Documents/HackerRank/src/Clickomania/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4 "Built target Clickomania"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4 "Built target Clickomania"
 .PHONY : CMakeFiles/Clickomania.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Clickomania.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alexlatz/Documents/HackerRank/src/Clickomania/cmake-build-debug/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/cmake-build-debug/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Clickomania.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alexlatz/Documents/HackerRank/src/Clickomania/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/Clickomania.dir/rule
 
 # Convenience name for target.
