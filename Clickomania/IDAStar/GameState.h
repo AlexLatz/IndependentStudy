@@ -31,5 +31,15 @@ class GameState {
             return this->uniqueNum;
         }
         Grid::Pair getLastRemoved() { return this->lastRemoved; }
+        bool operator==(const GameState& g) const {
+            return this->grid==g.grid && this->moves==g.moves && this->lastRemoved == g.lastRemoved;
+        }
+};
+
+template <class Container>
+class Adapter : public Container {
+public:
+    typedef typename Container::container_type container_type;
+    container_type &get_container() { return this->c; }
 };
 #endif

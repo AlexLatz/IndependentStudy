@@ -36,8 +36,10 @@ class Grid {
         Grid removeSet(Pair p);
         int getNumBlocks() const {return this->numBlocks;}
         const int getNumUniqueBlocks() const {return this->uniqueBlocks.size();}
-        const int getBlocksSize() const {return this->blocks.size();}
         set<Pair>& getBlocks();
         set<Pair>& getUniqueBlocks();
+        bool operator== (const Grid& g) const {
+            return this->blocks==g.blocks && this->uniqueBlocks==g.uniqueBlocks && this->numBlocks==g.numBlocks;
+        }
 };
 #endif

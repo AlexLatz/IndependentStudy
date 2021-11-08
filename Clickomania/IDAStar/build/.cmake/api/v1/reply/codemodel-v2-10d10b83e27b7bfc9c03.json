@@ -1,0 +1,69 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Clickomania",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Clickomania::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Clickomania-Debug-e7f0430468f88c838d91.json",
+					"name" : "Clickomania",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Clickomania_singlefile::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Clickomania_singlefile-Debug-5e4b94f04c25df7dd887.json",
+					"name" : "Clickomania_singlefile",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/alexlatz/Documents/HackerRank/src/Clickomania/build",
+		"source" : "/Users/alexlatz/Documents/HackerRank/src/Clickomania"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

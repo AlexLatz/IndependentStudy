@@ -60,36 +60,55 @@ if count ≥ 20, a nominal score of 0.01 would be given.
 The maximum scores for the testcases of this challenge are 10, 15, 25, and 30. Hence you can get a total score of 80.
 */
 #include "GameState.h"
+#include "clickomania.h"
 #include <fstream>
 #include <queue>
 #include <iostream>
 
 
-void nextMove(int x, int y, int k, vector<string> board) {
-    Grid grid(board);
-    priority_queue<GameState, vector<GameState>, greater<GameState> > pq;
-    GameState start(grid, nullptr,  0, (Grid::Pair){-1, -1});
-    if (start.getBoardFinished()) cout << -1 << -1 << endl;
-    pq.push(start);
-    while (!pq.top().getBoardFinished() && pq.top().getMoves() < 90) {
-        GameState *best = new GameState(pq.top());
-        pq.pop();
-        for (const GameState& child: best->getChildren()) {
-            pq.push(child);
+int Clickomania::heuristic(GameState node) {
+    return node.getGrid().getBlocks().size() - node.getGrid().getUniqueBlocks().size();
+}
+
+int Clickomania::search(int cost, int bound) {
+    GameState node = stack.front();
+    int pathCost = cost + heuristic(node);
+    if (pathCost > bound) return pathCost;
+    if (node.getBoardFinished()) return -1;
+    int min = INT_MAX;
+    for (GameState child : node.getChildren()) {
+        if (find(stack.begin(), stack.end(), child) == stack.end()) {
+            stack.push_front(child);
+            int t = search(cost, bound);
+            if (t == -1) return -1;
+            if (t < min) min = t;
+            stack.pop_front();
         }
     }
-    GameState chosen = pq.top();
-    cout << chosen.getMoves() << endl;
-    while (chosen.getParent()->getParent() != nullptr) {
-        chosen = *(chosen.getParent());
+    return min;
+}
+
+
+void Clickomania::nextMove(int x, int y, int k, vector<string> board) {
+    Grid grid(board);
+    GameState root(grid, nullptr, 0, (Grid::Pair){-1, -1});
+    int bound = heuristic(root);
+    stack.push_front(root);
+    while (true) {
+        int t = search(0, bound);
+        if (t == -1) {
+            GameState chosen = stack.front();
+            cout << stack[stack.size()-2].getLastRemoved().row << " " << stack[stack.size()-2].getLastRemoved().col << endl;
+            return;
+        }
+        bound = t;
     }
-    cout << chosen.getLastRemoved().row << " " << chosen.getLastRemoved().col << endl;
 }
 
 int main(int argc, char const *argv[])
 {
     ifstream infile;
-    infile.open("sample.txt");
+    infile.open("input.txt");
     int x = 0, y = 0, k = 0;
     infile >> x >> y >> k;
     vector<string> board;
@@ -99,7 +118,8 @@ int main(int argc, char const *argv[])
         board.push_back(s);
     }
     Grid grid(board);
-    nextMove(x, y, k, board);
+    Clickomania c;
+    c.nextMove(x, y, k, board);
     infile.close();
     return 0;
 }

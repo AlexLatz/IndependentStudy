@@ -6,11 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/Grid.cpp
+/Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/GameState.h
 Grid.h
 /Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/Grid.h
-iostream
--
 
 /Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/Grid.h
 vector
@@ -18,5 +16,15 @@ vector
 string
 -
 set
+-
+
+/Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/clickomania.cpp
+GameState.h
+/Users/alexlatz/Documents/IndependentStudy/Clickomania/AStar/GameState.h
+fstream
+-
+queue
+-
+iostream
 -
 
