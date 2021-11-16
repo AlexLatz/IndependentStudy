@@ -8,16 +8,27 @@ Grid::Grid(vector<string>& board) {
     updateBoard();
     prepareBlocks();
     this->disjointCreated = false;
+    this->points = 0;
+}
+
+Grid::Grid(vector<string>& board, int points) : Grid(board) {
+    this->points = points;
 }
 
 Grid::Grid(Grid& original) : board(original.board), parent(original.parent),  blocks(original.blocks), uniqueBlocks(original.uniqueBlocks), colors(original.colors){
     this->numBlocks = original.numBlocks;
     this->disjointCreated = original.disjointCreated;
+    this->points = original.points;
 }
 
-Grid::Grid(const Grid& original) : board(original.board), parent(original.parent), blocks(original.blocks), uniqueBlocks(original.uniqueBlocks), colors(original.colors){
+Grid::Grid(const Grid& original) : board(original.board), parent(original.parent),  blocks(original.blocks), uniqueBlocks(original.uniqueBlocks), colors(original.colors){
     this->numBlocks = original.numBlocks;
     this->disjointCreated = original.disjointCreated;
+    this->points = original.points;
+}
+
+char Grid::colorAt(Grid::Pair p) {
+    return this->board[p.row][p.col];
 }
 
 void Grid::prepareBlocks() {
@@ -118,12 +129,16 @@ void Grid::createDisjoint() {
 
 Grid Grid::removeSet(Grid::Pair p) {
     vector<string> newBoard(board);
+    int blocksRemoved = 0;
     for (int i = 0; i < newBoard.size(); i++) {
         for (int j = 0; j < newBoard[i].size(); j++) {
-            if (getAbsParent(i, j) == p) newBoard[i][j] = '-';
+            if (getAbsParent(i, j) == p) {
+                newBoard[i][j] = '-';
+                blocksRemoved++;
+            }
         }
     }
-    Grid newGrid(newBoard);
+    Grid newGrid(newBoard, this->points + (blocksRemoved-2)*(blocksRemoved-2));
     return newGrid;
 }
 
@@ -149,7 +164,6 @@ void Grid::printBoard() {
     for (int i = 0; i < board.size(); i++) {
         cout << board[i] << "\n";
     }
-    for (int color : colors) cout << color << " ";
 }
 
 void Grid::printParents() {
@@ -166,7 +180,6 @@ void Grid::printParents() {
 set<Grid::Pair>& Grid::getUniqueBlocks() {
     return this->uniqueBlocks;
 }
-
 map<char, int> Grid::colorRef;
 
 void Grid::prepColors(vector<string> board, int k) {
@@ -185,3 +198,4 @@ void Grid::prepColors(vector<string> board, int k) {
     }
     colorRef = colorRefNew;
 }
+

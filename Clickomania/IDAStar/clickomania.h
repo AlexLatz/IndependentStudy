@@ -9,9 +9,9 @@
 class Clickomania {
     deque<GameState> stack;
     public:
-        void nextMove(int x, int y, int k, vector<string> board);
-        int search(int cost, int bound);
-        int heuristic(GameState node);
+        void nextMove(vector<string> board);
+        double search(double cost, double bound);
+        double heuristic(GameState node);
 };
 
 #endif //CLICKOMANIA_CLICKOMANIA_H

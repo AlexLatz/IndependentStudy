@@ -17,34 +17,36 @@ class Grid {
                 return p.row == this->row && p.col == this->col;
             }
         };
-    private: 
+    private:
+        int points;
         int numBlocks{};
         vector<string> board;
         vector<vector<Pair> > parent;
         set<Pair> blocks;
         set<Pair> uniqueBlocks;
-        vector<int> colors;
-        static map<char, int> colorRef;
-public:
         bool disjointCreated;
+        vector<int> colors;
+public:
+        int getPoints() {return this->points;}
+        static map<char, int> colorRef;
+        vector<int> getColors() {return this->colors;}
+        char colorAt(Grid::Pair p);
         static void prepColors(vector<string> board, int k);
         Grid(vector<string>& board);
+        Grid(vector<string>& board, int points);
         Grid(Grid& original);
         Grid(const Grid& original);
         void prepareBlocks();
         void updateBoard();
         void printBoard();
         void printParents();
-        vector<int> getColors() {return this->colors;}
         void createDisjoint();
         Pair getAbsParent(int i, int j);
         Grid removeSet(Pair p);
         int getNumBlocks() const {return this->numBlocks;}
         const int getNumUniqueBlocks() const {return this->uniqueBlocks.size();}
+        const int getBlocksSize() const {return this->blocks.size();}
         set<Pair>& getBlocks();
         set<Pair>& getUniqueBlocks();
-        bool operator== (const Grid& g) const {
-            return this->blocks==g.blocks && this->uniqueBlocks==g.uniqueBlocks && this->numBlocks==g.numBlocks;
-        }
 };
 #endif

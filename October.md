@@ -34,3 +34,5 @@
 - Moved the clickomania A* into this repository instead of hackerrank
   - It's clearly grown to the point that it should be a part of the project
 - Recorded a video for Dr. Olid with current progress and an explanation
+
+## Taking a break for college apps and robotics - be back in November

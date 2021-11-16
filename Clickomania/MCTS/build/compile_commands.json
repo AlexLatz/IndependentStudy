@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/Users/alexlatz/Documents/HackerRank/src/Clickomania/build",
+  "command": "/usr/bin/clang++   -g -arch x86_64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17 -o CMakeFiles/Clickomania_singlefile.dir/singlefile.cpp.o -c /Users/alexlatz/Documents/HackerRank/src/Clickomania/singlefile.cpp",
+  "file": "/Users/alexlatz/Documents/HackerRank/src/Clickomania/singlefile.cpp"
+},
+{
+  "directory": "/Users/alexlatz/Documents/HackerRank/src/Clickomania/build",
+  "command": "/usr/bin/clang++   -g -arch x86_64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17 -o CMakeFiles/Clickomania.dir/clickomania.cpp.o -c /Users/alexlatz/Documents/HackerRank/src/Clickomania/clickomania.cpp",
+  "file": "/Users/alexlatz/Documents/HackerRank/src/Clickomania/clickomania.cpp"
+},
+{
+  "directory": "/Users/alexlatz/Documents/HackerRank/src/Clickomania/build",
+  "command": "/usr/bin/clang++   -g -arch x86_64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17 -o CMakeFiles/Clickomania.dir/Grid.cpp.o -c /Users/alexlatz/Documents/HackerRank/src/Clickomania/Grid.cpp",
+  "file": "/Users/alexlatz/Documents/HackerRank/src/Clickomania/Grid.cpp"
+},
+{
+  "directory": "/Users/alexlatz/Documents/HackerRank/src/Clickomania/build",
+  "command": "/usr/bin/clang++   -g -arch x86_64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17 -o CMakeFiles/Clickomania.dir/GameState.cpp.o -c /Users/alexlatz/Documents/HackerRank/src/Clickomania/GameState.cpp",
+  "file": "/Users/alexlatz/Documents/HackerRank/src/Clickomania/GameState.cpp"
+}
+]

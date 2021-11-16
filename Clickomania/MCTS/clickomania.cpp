@@ -64,60 +64,71 @@ The maximum scores for the testcases of this challenge are 10, 15, 25, and 30. H
 #include <fstream>
 #include <queue>
 #include <iostream>
+#include <random>
 
-
-double Clickomania::heuristic(GameState node) {
-    double value;
-    value += 1 * (node.getGrid().getBlocks().size() - node.getGrid().getUniqueBlocks().size());
-    value -= 0 * node.getMoves();
-    for (int color : node.getGrid().getColors()) {
-        if (color == 1) value -= 1000;
-    }
-    if (node.getChildren().empty() && !node.getBoardFinished()) value -= 1000;
-    return value;
+Clickomania::Clickomania(vector<string> board) {
+    this->root = new GameState(board, nullptr, 0, (Grid::Pair){-1, -1});
+    this->nodeCount = 0;
+    this->numRollouts = 0;
+    this->runTime = 0;
 }
 
-double Clickomania::search(double cost, double bound) {
-    GameState node = stack.front();
-    double pathCost = cost + heuristic(node);
-    if (pathCost > bound) return pathCost;
-    if (node.getBoardFinished()) return -1;
-    double min = INT_MAX;
-    for (GameState child : node.getChildren()) {
-        if (find(stack.begin(), stack.end(), child) == stack.end()) {
-            stack.push_front(child);
-            //child.getGrid().createDisjoint();
-            double t = search(pathCost, bound);
-            if (t == -1) return -1;
-            if (t < min) min = t;
-            stack.pop_front();
+GameState* Clickomania::selection() {
+    //SELECTION/EXPANSION
+    GameState* node = root;
+    while (node->getGrid().getNumUniqueBlocks() != 0 && node->getGrid().getNumUniqueBlocks() <= node->visited) {
+        sort(node->getChildren()->begin(), node->getChildren()->end());
+        node = &(*node->getChildren())[0];
+        if (node->rewardCount == 0) return node;
+    }
+    if (node->getGrid().getNumUniqueBlocks() > 0 && node->getGrid().getNumUniqueBlocks() > node->visited) {
+        sort(node->getChildren()->begin(), node->getChildren()->end());
+        node = &(*node->getChildren())[0];
+    }
+    return node;
+}
+
+void Clickomania::simulation(GameState* node) {
+    //TabuColorRandom prep
+    pair<int, int> max(0, 0);
+    map<int, char> reverseRef;
+    for (auto elem : Grid::colorRef) reverseRef.insert(pair<int,char>(elem.second, elem.first));
+        for (int i = 0; i < node->getGrid().getColors().size(); i++) {
+        if (max.second < node->getGrid().getColors()[i]) {
+            max.first = i;
+            max.second = node->getGrid().getColors()[i];
         }
     }
-    return min;
+    char color = reverseRef.at(max.first);
+    //SIMULATION
+    Grid grid = node->getGrid();
+    while(grid.getNumBlocks() != 0 && grid.getNumUniqueBlocks() != 0)  {
+        vector<Grid::Pair> list(grid.getUniqueBlocks().begin(), grid.getUniqueBlocks().end());
+        shuffle(list.begin(), list.end(), default_random_engine());
+        Grid::Pair chosen = (Grid::Pair){-1, -1};
+        for (Grid::Pair p : grid.getUniqueBlocks()) if (grid.colorAt(p) == color) chosen = p;
+        if (chosen.row == -1) chosen = *grid.getUniqueBlocks().begin();
+        grid = grid.removeSet(chosen);
+        grid.createDisjoint();
+    }
+    //BACKPROPAGATION
+    while (node != nullptr) {
+        node->rewardSum += grid.getPoints();
+        node->rewardCount++;
+        node = node->getParent();
+    }
 }
 
-
-void Clickomania::nextMove(vector<string> board) {
-    Grid grid(board);
-    GameState root(grid, 0, (Grid::Pair){-1, -1});
-    double bound = heuristic(root);
-    stack.push_front(root);
+void Clickomania::nextMove() {
     while (true) {
-        double t = search(0, bound);
-        if (t == -1) {
-            GameState chosen = stack.front();
-            cout << stack[stack.size()-2].getLastRemoved().row << " " << stack[stack.size()-2].getLastRemoved().col << endl;
-            cout << stack.size();
-            return;
-        }
-        bound = t;
+        simulation(selection());
     }
 }
 
 int main(int argc, char const *argv[])
 {
     ifstream infile;
-    infile.open("input.txt");
+    infile.open("sample.txt");
     int x = 0, y = 0, k = 0;
     infile >> x >> y >> k;
     vector<string> board;
@@ -127,9 +138,8 @@ int main(int argc, char const *argv[])
         board.push_back(s);
     }
     Grid::prepColors(board, k);
-    //Grid grid(board);
-    Clickomania c;
-    c.nextMove(board);
+    Clickomania c(board);
+    c.nextMove();
     infile.close();
     return 0;
 }
