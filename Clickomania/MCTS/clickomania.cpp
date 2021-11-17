@@ -73,17 +73,21 @@ Clickomania::Clickomania(vector<string> board) {
     this->runTime = 0;
 }
 
+bool pointerCompare(const GameState* t, const GameState* g) {
+    return t->rewardCount == g->rewardCount ? t->getUCTValue() > g->getUCTValue() : (t->rewardCount == 0 || g->rewardCount == 0 ? t->rewardCount < g->rewardCount : t->getUCTValue() > g->getUCTValue());
+}
+
 GameState* Clickomania::selection() {
     //SELECTION/EXPANSION
     GameState* node = root;
-    while (node->getGrid().getNumUniqueBlocks() != 0 && node->getGrid().getNumUniqueBlocks() <= node->visited) {
-        sort(node->getChildren()->begin(), node->getChildren()->end());
-        node = &(*node->getChildren())[0];
+    while (node->getChildren().size() != 0 && node->getChildren().size() <= node->visited) {
+        sort(node->getChildren().begin(), node->getChildren().end(), pointerCompare);
+        node = node->getChildren()[0];
         if (node->rewardCount == 0) return node;
     }
-    if (node->getGrid().getNumUniqueBlocks() > 0 && node->getGrid().getNumUniqueBlocks() > node->visited) {
-        sort(node->getChildren()->begin(), node->getChildren()->end());
-        node = &(*node->getChildren())[0];
+    if (node->getChildren().size() > 0 && node->getChildren().size() > node->visited) {
+        sort(node->getChildren().begin(), node->getChildren().end(), pointerCompare);
+    node = node->getChildren()[0];
     }
     return node;
 }
