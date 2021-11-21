@@ -73,21 +73,20 @@ Clickomania::Clickomania(vector<string> board) {
     this->runTime = 0;
 }
 
-bool pointerCompare(const GameState* t, const GameState* g) {
-    return t->rewardCount == g->rewardCount ? t->getUCTValue() > g->getUCTValue() : (t->rewardCount == 0 || g->rewardCount == 0 ? t->rewardCount < g->rewardCount : t->getUCTValue() > g->getUCTValue());
-}
 
 GameState* Clickomania::selection() {
     //SELECTION/EXPANSION
     GameState* node = root;
-    while (node->getChildren().size() != 0 && node->getChildren().size() <= node->visited) {
-        sort(node->getChildren().begin(), node->getChildren().end(), pointerCompare);
-        node = node->getChildren()[0];
+    while (node->getChildren().size() != 0 && node->getChildren().size() <= node->rewardCount) {
+        vector<GameState*> newChildren(node->getChildren());
+        sort(newChildren.begin(), newChildren.end(), UCTCompare());
+        node = newChildren[0];
         if (node->rewardCount == 0) return node;
     }
-    if (node->getChildren().size() > 0 && node->getChildren().size() > node->visited) {
-        sort(node->getChildren().begin(), node->getChildren().end(), pointerCompare);
-    node = node->getChildren()[0];
+    if (node->getChildren().size() > 0 && node->getChildren().size() > node->rewardCount) {
+        vector<GameState*> newChildren(node->getChildren());
+        sort(newChildren.begin(), newChildren.end(), UCTCompare());
+        node = newChildren[0];
     }
     return node;
 }
@@ -110,7 +109,7 @@ void Clickomania::simulation(GameState* node) {
         vector<Grid::Pair> list(grid.getUniqueBlocks().begin(), grid.getUniqueBlocks().end());
         shuffle(list.begin(), list.end(), default_random_engine());
         Grid::Pair chosen = (Grid::Pair){-1, -1};
-        for (Grid::Pair p : grid.getUniqueBlocks()) if (grid.colorAt(p) == color) chosen = p;
+        for (Grid::Pair p : grid.getUniqueBlocks()) if (grid.colorAt(p) != color) chosen = p;
         if (chosen.row == -1) chosen = *grid.getUniqueBlocks().begin();
         grid = grid.removeSet(chosen);
         grid.createDisjoint();
@@ -120,19 +119,28 @@ void Clickomania::simulation(GameState* node) {
         node->rewardSum += grid.getPoints();
         node->rewardCount++;
         node = node->getParent();
+        if (node != nullptr) node->updateSigma();
     }
 }
 
 void Clickomania::nextMove() {
-    while (true) {
+    auto start = chrono::high_resolution_clock::now();
+    while (chrono::duration_cast<chrono::microseconds>(chrono::high_resolution_clock::now() - start).count() < 1750000) {
         simulation(selection());
+    }
+    while (!this->root->getBoardFinished()) {
+        vector<GameState*> children(this->root->getChildren());
+        sort(children.begin(), children.end(), CountCompare());
+        Grid::Pair move = children[0]->getLastRemoved();
+        cout << move.row << " " << move.col << endl;
+        this->root = children[0];
     }
 }
 
 int main(int argc, char const *argv[])
 {
     ifstream infile;
-    infile.open("sample.txt");
+    infile.open("input.txt");
     int x = 0, y = 0, k = 0;
     infile >> x >> y >> k;
     vector<string> board;

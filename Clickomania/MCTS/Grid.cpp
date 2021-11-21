@@ -128,6 +128,7 @@ void Grid::createDisjoint() {
 }
 
 Grid Grid::removeSet(Grid::Pair p) {
+    p = getAbsParent(p.row, p.col);
     vector<string> newBoard(board);
     int blocksRemoved = 0;
     for (int i = 0; i < newBoard.size(); i++) {
@@ -138,7 +139,12 @@ Grid Grid::removeSet(Grid::Pair p) {
             }
         }
     }
-    Grid newGrid(newBoard, this->points + (blocksRemoved-2)*(blocksRemoved-2));
+    int newPoints = this->points;
+    if (blocksRemoved-2 > 0) newPoints += (blocksRemoved-2) * (blocksRemoved-2);
+    if (this->colors[colorRef.at(board[p.row][p.col])] - blocksRemoved == 1) newPoints -= 1000;
+    else if (this->colors[colorRef.at(board[p.row][p.col])] - blocksRemoved == 0) newPoints += 1000;
+    Grid newGrid(newBoard, newPoints);
+    if (newGrid.getNumBlocks() == 0) newGrid.points += 5000;
     return newGrid;
 }
 
@@ -186,8 +192,10 @@ void Grid::prepColors(vector<string> board, int k) {
     set<char> colors;
     for (int i = 0; i < board.size(); i++) {
         for (int j = 0; j < board[i].size(); j++) {
-            colors.insert(board[i][j]);
-            if (colors.size() >= k) break;
+            if (board[i][j] != '-') {
+                colors.insert(board[i][j]);
+                if (colors.size() >= k) break;
+            }
         }
     }
     map<char, int> colorRefNew;
@@ -198,4 +206,3 @@ void Grid::prepColors(vector<string> board, int k) {
     }
     colorRef = colorRefNew;
 }
-
