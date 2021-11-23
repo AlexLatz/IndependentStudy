@@ -6,8 +6,8 @@ class GameState {
     Grid grid;
     GameState* parent;
     int moves;
-    static constexpr double C = 0.5;
-    static constexpr double D = 10000;
+    static constexpr double C = 0.1;
+    static constexpr double D = 32;
     vector<GameState*> children;
     bool boardFinished;
     int uniqueNum;

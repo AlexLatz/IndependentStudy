@@ -68,9 +68,6 @@ The maximum scores for the testcases of this challenge are 10, 15, 25, and 30. H
 
 Clickomania::Clickomania(vector<string> board) {
     this->root = new GameState(board, nullptr, 0, (Grid::Pair){-1, -1});
-    this->nodeCount = 0;
-    this->numRollouts = 0;
-    this->runTime = 0;
 }
 
 
@@ -109,7 +106,7 @@ void Clickomania::simulation(GameState* node) {
         vector<Grid::Pair> list(grid.getUniqueBlocks().begin(), grid.getUniqueBlocks().end());
         shuffle(list.begin(), list.end(), default_random_engine());
         Grid::Pair chosen = (Grid::Pair){-1, -1};
-        for (Grid::Pair p : grid.getUniqueBlocks()) if (grid.colorAt(p) != color) chosen = p;
+        for (Grid::Pair p : grid.getUniqueBlocks()) if (grid.colorAt(p) != color && !grid.isVS(p)) chosen = p;
         if (chosen.row == -1) chosen = *grid.getUniqueBlocks().begin();
         grid = grid.removeSet(chosen);
         grid.createDisjoint();
@@ -125,14 +122,23 @@ void Clickomania::simulation(GameState* node) {
 
 void Clickomania::nextMove() {
     auto start = chrono::high_resolution_clock::now();
-    while (chrono::duration_cast<chrono::microseconds>(chrono::high_resolution_clock::now() - start).count() < 1750000) {
+    while (chrono::duration_cast<chrono::microseconds>(chrono::high_resolution_clock::now() - start).count() < 10000000) {
         simulation(selection());
+        /*
+        if (this->root->rewardCount >= L * (this->root->getMoves() + 1) && this->root->getUniqueNum() > 0) {
+            vector<GameState*> children(this->root->getChildren());
+            sort(children.begin(), children.end(), CountCompare());
+            this->root = children[0];
+        }
+         */
     }
+    cout << "done" << endl;
     while (!this->root->getBoardFinished()) {
         vector<GameState*> children(this->root->getChildren());
         sort(children.begin(), children.end(), CountCompare());
         Grid::Pair move = children[0]->getLastRemoved();
         cout << move.row << " " << move.col << endl;
+        children[0]->getGrid().printBoard();
         this->root = children[0];
     }
 }
@@ -140,7 +146,7 @@ void Clickomania::nextMove() {
 int main(int argc, char const *argv[])
 {
     ifstream infile;
-    infile.open("input.txt");
+    infile.open("board4.txt");
     int x = 0, y = 0, k = 0;
     infile >> x >> y >> k;
     vector<string> board;

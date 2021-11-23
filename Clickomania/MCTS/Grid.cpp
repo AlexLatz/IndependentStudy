@@ -141,10 +141,15 @@ Grid Grid::removeSet(Grid::Pair p) {
     }
     int newPoints = this->points;
     if (blocksRemoved-2 > 0) newPoints += (blocksRemoved-2) * (blocksRemoved-2);
-    if (this->colors[colorRef.at(board[p.row][p.col])] - blocksRemoved == 1) newPoints -= 1000;
-    else if (this->colors[colorRef.at(board[p.row][p.col])] - blocksRemoved == 0) newPoints += 1000;
+    if (this->numBlocks - blocksRemoved == 0) newPoints += 1000;
+    for (int i = 0; i < colors.size(); i++) {
+        if (i != colorRef.at(board[p.row][p.col])) {
+            newPoints -= (colors[i] - 2) * (colors[i] - 2);
+        } else {
+            newPoints -= (colors[i] - blocksRemoved - 2) * (colors[i] - blocksRemoved - 2);
+        }
+    }
     Grid newGrid(newBoard, newPoints);
-    if (newGrid.getNumBlocks() == 0) newGrid.points += 5000;
     return newGrid;
 }
 
@@ -186,6 +191,19 @@ void Grid::printParents() {
 set<Grid::Pair>& Grid::getUniqueBlocks() {
     return this->uniqueBlocks;
 }
+
+bool Grid::isVS(Grid::Pair p) {
+    int count = 0;
+    if (p.row > 0 && board[p.row-1][p.col] == '-') return false;
+    for (int i = 0; i < board.size() - p.row; i++) {
+        if (board[p.row][p.col] == board[p.row+i][p.col]) {
+            count++;
+            if (count > 1) return true;
+        } else break;
+    }
+    return count > 1;
+}
+
 map<char, int> Grid::colorRef;
 
 void Grid::prepColors(vector<string> board, int k) {

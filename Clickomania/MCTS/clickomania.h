@@ -7,9 +7,7 @@
 
 class Clickomania {
         GameState* root;
-        int runTime;
-        int numRollouts;
-        int nodeCount;
+        static constexpr int L = 60;
     public:
         Clickomania(vector<string> board);
         GameState* selection();

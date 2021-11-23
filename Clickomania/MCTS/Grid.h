@@ -31,6 +31,7 @@ public:
         static map<char, int> colorRef;
         vector<int> getColors() {return this->colors;}
         char colorAt(Grid::Pair p);
+        bool isVS(Grid::Pair p);
         static void prepColors(vector<string> board, int k);
         Grid(vector<string>& board);
         Grid(vector<string>& board, int points);

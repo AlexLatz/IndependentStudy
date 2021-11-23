@@ -46,3 +46,15 @@
 - Did about an hour of testing, it definitely works but still trying to iron out some bugs in object deletion
 - Leaf sorting now working and I think the UCT does as well
 - Hopefully should be pretty solid as soon as I fix the bugs
+
+# Thursday, November 18th
+
+- Found a solution to the memory issues - pointer children
+- The pointer children have weird sorting issues
+- Met with Mr. Griest
+
+# Saturday, November 20th
+
+- Fixed the sorting issues - MCTS working!
+- It's very good with about 10 seconds, but it has 1.75 max
+- Working on optimizations - its already better than A*
