@@ -58,3 +58,19 @@
 - Fixed the sorting issues - MCTS working!
 - It's very good with about 10 seconds, but it has 1.75 max
 - Working on optimizations - its already better than A*
+
+# Sunday, November 21st
+
+- Did some heuristic tuning, tried VS-pruning and a few other methods
+- Eventually got the MCTS to clear the third board and to score a 52, putting me in 128th place
+- Not sure if I can clear the fourth board with this structure, maxing out on time
+
+# Monday, November 22nd
+
+- Lots more tuning and attempts, still haven't beaten my top score but consistent on beating 3rd
+- Going to call it on Clickomania for here - this problem is insanely difficult and I might come back later
+- Decided on Checkers for the next environment
+
+# Tuesday, November 23rd
+
+- Started building checkers, almost done with board generation - then MCTS
