@@ -22,7 +22,8 @@ class Board {
         static bool isUpper(char c);
     struct Move {
         pair<int, int> initialPos;
-        vector<pair<int, int>> moves;
+        vector<pair<int, int> > moves;
+        vector<pair<int, int> > removedPieces;
         Move(pair<int, int> pos, vector<pair<int, int> > moves) {
             this->initialPos = pos;
             this->moves = moves;
@@ -32,6 +33,11 @@ class Board {
             vector<pair<int, int> > moves;
             moves.push_back(move);
             this->moves;
+        }
+        Move(pair<int, int> initialPos, pair<int, int> move, pair<int, int> removedPiece) : Move(initialPos, move) {
+            vector<pair<int, int> > removedPieces;
+            removedPieces.push_back(removedPiece);
+            this->removedPieces = removedPieces;
         }
     };
 };
